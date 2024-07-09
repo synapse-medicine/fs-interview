@@ -1,5 +1,6 @@
 package com.synapse.itw.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;
@@ -12,6 +13,7 @@ public class Patient {
     @JsonProperty("last_name")
     private String lastName;
     @JsonProperty("birth_date")
+    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate birthDate;
     @JsonProperty("height")
     private int height;

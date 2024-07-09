@@ -6,21 +6,28 @@ import './PatientProfile.css';
 const PatientProfile = () => {
   const {id} = useParams();
   const [patientData, setPatientData] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
-    // TODO: Use a var for the URL
-    const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
+    // TODO: Use a var for the URL to make everything work with Docker
     fetch(`http://localhost:8080/api/v1/patients/${id}`, {
       method: "GET",
-      headers: myHeaders,
-      mode: "no-cors",
+      mode: "cors",
     })
       .then(response => response.json())
       .then(data => setPatientData(data))
-      .catch(error => console.error(error));
+      .catch(error => {
+        console.error(error);
+        setErrorMessage({title: "Error fetching patient data", details: error.message});
+      });
   }, [id]);
 
+  if (errorMessage) {
+    return <div className="container">
+      <h1>{errorMessage.title}</h1>
+      <p>{errorMessage.details}</p>
+    </div>
+  }
   if (!patientData) {
     return <div className="container">Loading...</div>;
   }
