@@ -25,27 +25,3 @@ h1 {
     text-align: center;
     color: #4a90e2;
 }
-
-.patient-profile {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.profile-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.label {
-    font-weight: bold;
-    color: #555;
-}
-
-.value {
-    color: #333;
-}
