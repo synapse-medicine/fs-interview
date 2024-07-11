@@ -27,4 +27,8 @@ public class PatientService {
         patientRepository.updateAllergies(patientId, allergies);
         return patientRepository.getAllergies(patientId);
     }
+
+    public List<Allergy> getPatientAllergies(int patientId) {
+        return patientRepository.getAllergies(patientId);
+    }
 }

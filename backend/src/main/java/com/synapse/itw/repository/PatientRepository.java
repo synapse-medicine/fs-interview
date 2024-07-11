@@ -43,13 +43,13 @@ public class PatientRepository {
     public void updateAllergies(int patientId, List<Integer> allergies) {
         jdbcTemplate.update("DELETE FROM patient_allergy WHERE patient_id = ?", patientId);
         for (Integer allergy : allergies) {
-            jdbcTemplate.update("INSERT INTO patient_allergy (patient_id, allergy_id) VALUES (?, ?)", patientId, allergy);
+            jdbcTemplate.update("INSERT INTO patient_allergy (patient_id, molecule_id) VALUES (?, ?)", patientId, allergy);
         }
     }
 
     public List<Allergy> getAllergies(int patientId) {
         return this.jdbcTemplate.query(
-                "SELECT a.id, a.name FROM allergies a JOIN patient_allergy pa ON a.id = pa.allergy_id WHERE pa.patient_id = ?",
+                "SELECT m.id, m.name FROM molecules m JOIN patient_allergy pa ON m.id = pa.molecule_id WHERE pa.patient_id = ?",
                 (rs, rowNum) -> new Allergy(
                         rs.getInt("id"),
                         rs.getString("name")

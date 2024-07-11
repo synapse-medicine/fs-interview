@@ -4,6 +4,7 @@
 
 * A Java 21 Spring backend with a populated SQLite in memory database and endpoints to:
     * get a Patient by id
+    * get the list of allergies for a given Patient
     * update a Patient's allergies
 * A Node 20 React application with the following pages:
     * a home page that lists all patients

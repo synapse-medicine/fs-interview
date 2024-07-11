@@ -34,7 +34,17 @@ public class PatientController {
         }
     }
 
-    @PutMapping("{id}")
+    @GetMapping("{id}/allergies")
+    public ResponseEntity<List<Allergy>> getPatientAllergies(@PathVariable String id) {
+        try {
+            int patientId = Integer.parseInt(id);
+            return ResponseEntity.ok(patientService.getPatientAllergies(patientId));
+        } catch (NumberFormatException e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @PutMapping("{id}/allergies")
     public ResponseEntity<List<Allergy>> updatePatientAllergies(@PathVariable String id, @RequestBody List<Integer> allergies) {
         try {
             int patientId = Integer.parseInt(id);

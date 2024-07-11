@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS patients
     weight     INTEGER
 );
 
-CREATE TABLE IF NOT EXISTS allergies
+CREATE TABLE IF NOT EXISTS molecules
 (
     id   INTEGER PRIMARY KEY AUTOINCREMENT,
     name VARCHAR(255) NOT NULL
@@ -17,8 +17,8 @@ CREATE TABLE IF NOT EXISTS allergies
 CREATE TABLE IF NOT EXISTS patient_allergy
 (
     patient_id INT NOT NULL,
-    allergy_id INT NOT NULL,
-    PRIMARY KEY (patient_id, allergy_id),
-    FOREIGN KEY (patient_id) REFERENCES patient (id),
-    FOREIGN KEY (allergy_id) REFERENCES allergy (id)
+    molecule_id INT NOT NULL,
+    PRIMARY KEY (patient_id, molecule_id),
+    FOREIGN KEY (patient_id) REFERENCES patients (id),
+    FOREIGN KEY (molecule_id) REFERENCES molecules (id)
 );
