@@ -1,0 +1,18 @@
+# docker compose with a network for running the 2 applications in subfolders : 
+# - frontend/
+# - backend/ 
+#
+version: '3.7'
+services: 
+  backend:
+    build: ./backend
+    image: itw_backend
+    ports: 
+      - "8080"
+    network_mode: "host"
+  frontend:
+    build: ./frontend
+    image: itw_frontend
+    ports: 
+      - "8081:80"
+
