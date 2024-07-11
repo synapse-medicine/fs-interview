@@ -18,13 +18,14 @@
 
 Your first task will be to develop a new feature.
 The goal is to add a search molecule component to the patient profile page.
-This component will display a list of molecules based on the searched text.
+This component will show a list of molecules that match the input text.
 When the user selects a molecule from this list, it should be added to the patient allergies using the existing endpoint.
 
 This gives the following user workflow:
-1. The user clicks on the search field and search for a molecule using free text.
-2. The user selects the molecule from the list of results that match the search text.
-3. The user chooses the molecule that is added to the patient's allergy list.
+1. The user clicks on the search field and search for a molecule name using free text.
+2. The user selects the molecule from a list of results that match the search text.
+3. The user chooses the molecule by clicking on it.
+4. The chosen molecule is added to the patient’s allergy list.
 
 You are free to develop the feature as you want. The UX and the design are taken into account, but you should not spend too much
 time on it.
