@@ -9,7 +9,6 @@ const PatientProfile = () => {
   const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
-    // TODO: Use a var for the URL to make everything work with Docker
     fetch(`http://localhost:8080/api/v1/patients/${id}`, {
       method: "GET",
       mode: "cors",
