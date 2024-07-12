@@ -3,6 +3,11 @@
 on:
   workflow_dispatch:
   push:
+    paths: 
+      - 'backend/**/*.java'
+      - 'frontend/**/*.js'
+  pull_request:
+    types: [review_requested]
 
 jobs:
   build-backend:
