@@ -1,7 +1,8 @@
 # Code assessment
 
-**Be sure to create a working copy using this one as a template**.
-[Here is how to do it](https://github.com/synapse-medicine/fs-interview/wiki/How-to-start/). 
+> [!IMPORTANT]  
+> **Be sure to create yourself a working copy using this repo as a template**.
+> [Here is how to do it](https://github.com/synapse-medicine/fs-interview/wiki/How-to-start/). 
 
 ## Provided material
 
