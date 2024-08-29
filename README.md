@@ -1,5 +1,9 @@
 # Code assessment
 
+> [!IMPORTANT]  
+> **Be sure to create yourself a working copy using this repo as a template**.
+> [Here is how to do it](https://github.com/synapse-medicine/fs-interview/wiki/How-to-start/). 
+
 ## Provided material
 
 * A Java 21 Spring backend with a populated SQLite in memory database and endpoints to:
@@ -14,6 +18,11 @@
 * A basic CI using GitHub Actions
 
 ## Instructions
+
+### Before you start 
+
+The provided repository needs to be used as a *code template* to create a repository in your personal space. 
+
 
 ### Adding a new feature
 
